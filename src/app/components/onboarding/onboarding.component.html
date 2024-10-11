@@ -1,0 +1,21 @@
+<ion-content class="slide-content">
+  <swiper-container
+    #swiper
+    [init]="false"
+    
+  >
+    @for (slide of slides; track $index) {
+    <swiper-slide>
+      <div class="slide-content">
+        <img [src]="slide.image" [alt]="slide.title" alt="notfound" />
+        <h2>{{ slide.title }}</h2>
+        <p>{{ slide.description }}</p>
+      </div>
+    </swiper-slide>
+    }
+  </swiper-container>
+
+  <ion-button expand="block" (click)="startApp()" class="open-app-button">
+    Iniciar
+  </ion-button>
+</ion-content>
